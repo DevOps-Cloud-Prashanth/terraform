@@ -17,6 +17,7 @@ resource "aws_subnet" "name" {
 resource "aws_instance" "name" {
     
     ami = var.ami
+    associate_public_ip_address = true
     instance_type = var.instance_type
     subnet_id = aws_subnet.name.id
     tags = {
