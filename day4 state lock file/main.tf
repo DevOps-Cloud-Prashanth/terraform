@@ -22,8 +22,8 @@ resource "aws_subnet" "name" {
 resource "aws_instance" "name" {
   ami = "ami-01760eea5c574eb86"
   instance_type = "t3.micro"
-  count = 4
+  count = 2
   tags = {
-    Name = "instance"
+    Name = "anand"
   }
 }

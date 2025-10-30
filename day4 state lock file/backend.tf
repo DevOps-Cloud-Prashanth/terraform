@@ -3,7 +3,9 @@ terraform {
     bucket         = "prashanthbucccket"
     key            = "day-4/terraform.tfstate"
     region         = "ap-south-1"
-    use_lockfile = true
+   # use_lockfile = true
+    dynamodb_table = "dynamodb1"
+    encrypt = true
   }
 }
 
