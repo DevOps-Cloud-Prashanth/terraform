@@ -116,23 +116,23 @@ resource "aws_route_table_association" "name2" {
 }
 resource "aws_instance" "name1" {
   ami = "ami-01760eea5c574eb86"
+  count = 2
   instance_type = "t3.micro"
   subnet_id = aws_subnet.name1.id
   vpc_security_group_ids = [ aws_security_group.name.id ]
   tags = {
     Name = "public-server"
-    count =2
   }
   
 }
 resource "aws_instance" "name2" {
   ami = "ami-01760eea5c574eb86"
+  count = 2
   instance_type = "t3.micro"
   subnet_id = aws_subnet.name2.id
   vpc_security_group_ids = [ aws_security_group.name.id ]
   tags = {
     Name = "private-server"
-    count =2
   }
   
 }
