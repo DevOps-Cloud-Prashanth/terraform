@@ -107,12 +107,17 @@ resource "aws_nat_gateway" "name" {
 
 resource "aws_route_table" "private_rt" {
   vpc_id = aws_vpc.name.id
+
+  route  {
+    cidr_block = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.name.id
+  }
    
 }
 resource "aws_route_table_association" "name2" {
   route_table_id = aws_route_table.private_rt.id
   subnet_id = aws_subnet.name2.id
-  
+
 }
 resource "aws_instance" "name1" {
   ami = "ami-01760eea5c574eb86"
