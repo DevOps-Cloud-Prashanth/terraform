@@ -8,13 +8,13 @@ resource "aws_instance" "name" {
 
 
   lifecycle {
-    create_before_destroy = true
+    create_before_destroy = true  #before destroy it will create a new resouces command to check #terraform destroy
   }
    lifecycle {
-     ignore_changes = [ instance_type ]    
+     ignore_changes = [ instance_type ]    #for specific changes will ignore #terraform apply
    }
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = true     #it will prevent the rresources to not delete #terraform destroy 
   }
 
 }
