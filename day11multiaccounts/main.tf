@@ -9,3 +9,4 @@ resource "aws_s3_bucket" "name" {
     provider = aws.mumbai
   
 }
+#its used to create resource in existing and  resource from another account or two accounts configure with one developer to create resources from both accounts
