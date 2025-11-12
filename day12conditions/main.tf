@@ -56,7 +56,7 @@ resource "aws_instance" "example" {
 }
 
 #here if we put false 0ne instance will create.destroy after creation
-#if we put true and remove this (== "prod")
+#if we put true and remove this (== "prod") and after run the code three instances will create
 
 # #In this case:
 # #If var.environment == "prod" → count = 3
